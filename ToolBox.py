@@ -282,8 +282,8 @@ if chek == True:
                                         print("~~~~~~~~~~~~~~~~Teref  yanlishdir !  ! ")
                         elif secimFmS==5:
                                     s1=int(input("Oturacaq : "))
-                                    s1=int(input("Yan Teref :  : "))
-                                    s2=int(input("Hundurluk : "))
+                                    s2=int(input("Yan Teref :  : "))
+                                    s3=int(input("Hundurluk : "))
                                     if (s1*s2*s3)>0 and s1!=s2 and s1!= s3 :
                                         sahe=((s1+s2)/2)*s3
                                         print(f"Trapesiyanin sahesi : ")
