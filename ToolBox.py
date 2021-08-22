@@ -1,48 +1,60 @@
-
 print("Salam !")
+
 print("Tool Box programına xosh  gelmisiniz ! ","\n===================================================","\n ")
 while True:
-
+    chek=False
+    loop2=1
     
+        
     systemEnter=int(input("Girish ~ 1 \nQeydiyyat ~ 2 \n\nCavab :  "))
     passwordS=123
     nameS="a"
-    
-    if systemEnter==2:
-    
-        nameU=input("\n============================================\nQeydiyyat : \n\nAdinizi daxil edin : ")
-        loop=1
-    
-        while loop != 0:
-      
-            passwordU=int(input("Parolu daxil edin : "))
-            passwordUchek=int(input("Parolu  yeniden daxil edin : "))
-    
-            if passwordU == passwordUchek:
-                loop=0
-                chek=True
-                systemEnter=1
-                passwordS=passwordU
-                nameS=nameU
-            else : 
-                print("\n~~~~~~~~~~Parol eyni deyil ! ")
-                loop=1
-    
-    if systemEnter ==1 :
-        print("\n============================================\nGirish  : ")
-        loop1=1
-        while loop1 != 0:
-            nameU=input("\n\nAdinizi daxil edin : ")
-            passwordU=int(input("Parol : ")) 
-            if (nameU == nameS ) and (passwordU == passwordS):
-                loop1=0
-                chek=True
-            else:
-                print("\n~~~~~~~~~~Ad veya Parol yanlishdir !! ")
-                loop1=1
-    
-    
+
+    while loop2 != 0:   
+        if systemEnter==2:
         
+            nameU=input("\n============================================\nQeydiyyat : \n\nAdinizi daxil edin : ")
+            loop=1
+        
+            while loop != 0:
+          
+                passwordU=int(input("Parolu daxil edin : "))
+                passwordUchek=int(input("Parolu  yeniden daxil edin : "))
+        
+                if passwordU == passwordUchek:
+                    loop=0
+                    chek=True
+                    systemEnter=1
+                    passwordS=passwordU
+                    nameS=nameU
+                else : 
+                    print("\n~~~~~~~~~~Parol eyni deyil ! ")
+                    loop=1
+        
+        if systemEnter ==1 :
+            print("\n============================================\nGirish  : ")
+            loop1=1
+            while loop1 != 0:
+                nameU=input("\n\nAdinizi daxil edin : ")
+                passwordU=int(input("Parol : "))
+               
+                if (nameU == nameS ) and (passwordU == passwordS):
+                    loop1=0
+                    loop2=0
+                    chek=True
+                else:
+                    print("\n~~~~~~~~~~Ad veya Parol yanlishdir !! \nQeydiyyat sehifesine kechmek isdeyirsiz ? \nHe __> 1 \nXeyr __> 2 ")
+                    qeySecim=int(input(">>>  "))
+                    if qeySecim == 1:
+                        systemEnter =2
+                        break
+                    else:
+                        pass
+                        
+                    loop1=1
+        
+    
+    chek=True    
     if chek == True:
         print("\n\n========================================================= \n\nToollar : \n")
         # Kalkulyator , Mezenne konvertoru , Mesafe uzre xerc hesablama , VAhidler arasi konvertor , Sahe hesablama 
@@ -66,9 +78,9 @@ while True:
                  print("\n===============================================\n\nKalkulyator : ")
                  n1=float(input("Ededleri daxil edin : \nEded 1 ~ "))
                  n2=float(input("Eded 2 : "))
-                 print("\n1~ Toplama\n2~ Chixma\n3~ Vurma\n4~ Bolme\n5~ Faktorial\n6~ Ustlu vurma")
+                 print("\n1~ Toplama\n2~ Chixma\n3~ Vurma\n4~ Bolme\n5~ Faktorial\n6~ Ustlu vurma\n7~ Kok tapma")
                  s=int(input("\nSechim : "))
-                 if s>0 and s<7:
+                 if s>0 and s<8:
                      if s==1:
                          cem=n1+n2
                          print(f"{n1} + {n2} = {cem} ")
@@ -107,6 +119,49 @@ while True:
                          u1=n1**ust
                          u2=n2**ust
                          print(f"{n1} ustu {ust} = {u1} \n{n2} ustu {ust} = {u2} ")
+                     elif s==7:
+                         chek1 = False
+                         if n1 != 0 and n2 != 0 :
+                             chek1=True
+                             pass
+                         else:
+                             print("Ededler '0' ola bilmez !!!")
+                             while chek1 == False :
+                                 n1=int(input("Eded 1: "))
+                                 n2=int(input("Eded 2 : "))
+                                 if n1 != 0 and n2 != 0 :
+                                     chek1=True
+                                     break
+
+                                 else:
+                                     continue
+                         if chek1==True:
+                                kok=1
+                                num=n1
+                                loop4=2
+                                while loop4 != 0:
+
+
+                                     while kok < (num/2):
+
+                                         if kok**2==num:
+
+                                             print(f"{num} ededinin koku : {kok}")
+                                             break
+                                         else:
+                                             kok+=1
+                                     num=n2
+                                     kok=1
+                                     loop4-=1
+
+
+                        
+
+
+                        
+                            
+
+                        
             elif  toolID==2:  
                 print("\n===============================================\n\nXerc hesablam : ")
                 m=float(input("Mesafeni daxil edin : ")) 
@@ -419,6 +474,7 @@ while True:
                         kq=int(input("Kq : "))
                         mq=kq*1000000
                         s=mq/100000000
+                        qr=mq/1000
                         t=mq/10000000000
                         print(f"Mq : {mq} \nQr : {qr} \nKq : {kq} \nS : {s} \nT : {t}")
                     elif sA ==4:
@@ -460,5 +516,7 @@ while True:
     
     else:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~Xeta ! ")
+
+
 
 
